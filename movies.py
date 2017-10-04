@@ -14,8 +14,13 @@ password = "rounds-discontinuances-remedy"
 
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
+def match_genres(tx):
+    return tx.run("MATCH (genre:Genre) "
+                  "RETURN genre.name AS name "
+                  "ORDER BY genre.name").data()
 @app.route("/")
 def get_index():
-    """ Read-only queries should be run within a read_transaction
+    """ Show the index page.
     """
-    return "Hello, world!"
+    with driver.session() as session:
+        return render_template("index.html", genres=session.read_transaction(match_genres))

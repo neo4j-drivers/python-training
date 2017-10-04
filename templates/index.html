@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Watch or Not?</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Watch or Not?</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Watch or Not?</h1>
+        <p class="lead">Welcome to Watch or Not, the hottest movie recommender in town.</p>
+      </div>
+    </div>
+
+    <div class="getting-started container">
+        <div class="col-xs-12">
+            <p class="load">What are you in the mood for?</p>
+            <ul class="genres list-inline">
+            {% for genre in genres %}
+            <li>
+                <a href="/recommend/{{ genre.name }}">{{ genre.name }}</a>
+            </li>
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+
+
+  </body>
+</html>
