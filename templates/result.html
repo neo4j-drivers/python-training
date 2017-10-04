@@ -27,12 +27,12 @@
     </div>
 
     <div class="container rate-film">
-      <h2 class="text-center">So you want a {{ genre.name }} film, huh?</h2>
-      <p class="lead text-center">How do you feel about&hellip;</p>
+      <h2 class="text-center">{{ genre.name }} film? You can't handle a {{ genre.name }} film!</h2>
+      <p class="lead text-center">Based on your responses, we're pleased to recommend you&hellip;</p>
 
       <div class="film" id="movie_{{movie.imdbId}}">
         <div class="col-md-8 col-md-offset-2 col-sm-12 film-title">
-          <h2 class="title text-center">{{ movie.title }}?</h2>
+          <h2 class="title text-center">{{ movie.title }}</h2>
         </div>
         <div class="film-cover col-md-4 col-md-offset-2 col-sm-6">
           <img class="poster" src="{{ movie.src }}" alt="Poster">
@@ -51,18 +51,6 @@
             <dt>Rating</dt>
             <dd class="imdbRating">{{ movie.imdbRating }}</dd>
           </dl>
-
-          <nav class="rate">
-            <a href="#" class="col-xs-5 btn btn-danger downvote">
-              <i class="glyphicon glyphicon-thumbs-down"></i>
-              I hate it
-            </a>
-            <a href="#" class="col-xs-5 pull-right btn btn-success downvote">
-              <i class="glyphicon glyphicon-thumbs-up"></i>
-              I love it
-            </a>
-          </nav>
-        </div>
       </div>
     </div>
 
